@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fan animation</title>
+    <style>
+        .fan {
+            background-image: url("image/fan.png");
+            background-size: cover;
+            width: 400px;
+            height: 400px;
+            margin: 50px auto;
+            animation: fananimation 3s linear infinite;
+            animation-play-state: paused;
+        }
+
+        .button {
+            /* position: absolute; */
+            text-align: center;
+        }
+
+        .bt {
+            width: 50px;
+            height: 25px;
+        }
+
+        @keyframes fananimation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(359deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fan" id="fan"></div>
+
+    <div class="button">
+        <button onclick="fandemo(0)" class="bt">stop</button>
+        <button onclick="fandemo(1)" class="bt">1</button>
+        <button onclick="fandemo(2)" class="bt">2</button>
+        <button onclick="fandemo(3)" class="bt">3</button>
+        <button onclick="fandemo(4)" class="bt">4</button>
+    </div>
+
+    <script>
+        function fandemo(speed) {
+            if (speed == 0) {
+                document.getElementById('fan').style.animationPlayState = "paused";
+            }
+            else if (speed == 1) {
+                document.getElementById('fan').style.animationPlayState = "running";
+                document.getElementById('fan').style.animationDuration = "1.8s";
+            }
+            else if (speed == 2) {
+                document.getElementById('fan').style.animationPlayState = "running";
+                document.getElementById('fan').style.animationDuration = "1.5s";
+            }
+            else if (speed == 3) {
+                document.getElementById('fan').style.animationPlayState = "running";
+                document.getElementById('fan').style.animationDuration = "0.9s";
+            }
+            else if (speed == 4) {
+                document.getElementById('fan').style.animationPlayState = "running";
+                document.getElementById('fan').style.animationDuration = "0.5s";
+            }
+        }
+    </script>
+</body>
+
+</html>
